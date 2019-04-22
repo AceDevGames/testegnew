@@ -15,11 +15,11 @@
                     </select>
                 </div>
 
-                <div class="form-group">
+                <!--div class="form-group">
                     <label for="valorproduto">Valor mínimo do Produto</label>
                     <input type="text" class="form-control" name="lanceleilao"
                            id="lanceleilao" placeholder="Preencha o valor minimo do Leilão">
-                </div>
+                </div-->
 
                 <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
                 <button type="cancel" class="btn btn-danger btn-sm">Cancelar</button>

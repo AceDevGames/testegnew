@@ -10,7 +10,6 @@
                     <tr>
                         <th>Código Leilão</th>
                         <th>Produto</th>
-                        <th>Pessoa</th>
                         <th>Valor Lance</th>
 
                     </tr>
@@ -26,14 +25,20 @@
                                     @endif
                                 @endforeach
                             </td>
-                            <td>
+                            <!--td>
                                 @foreach($pessoas as $pess)
                                     @if( $pess->id === $lei->pessoa_id )
                                         {{$pess->nome}}
                                     @endif
                                 @endforeach
+                            </td-->
+                            <td>
+                                @foreach($produtos as $prod)
+                                    @if( $prod->id === $lei->produto_id )
+                                        {{$prod->valor}}
+                                    @endif
+                                @endforeach
                             </td>
-                            <td>{{$lei->valor}}</td>
 
                             <td>
                                 <a href="/leiloes/novolance/{{$lei->id}}" class="btn btn-sm btn-success">Lance</a>

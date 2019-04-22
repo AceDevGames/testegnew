@@ -15,6 +15,9 @@ class CreateLancesTable extends Migration
     {
         Schema::create('lances', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->float('valor');
+            $table->bigInteger('leilao_id')->unsigned();
+            $table->foreign('leilao_id')->references('id')->on('leilaos');
             $table->timestamps();
         });
     }
