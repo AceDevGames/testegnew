@@ -1,22 +1,43 @@
-@extends('layout.app',["current"=>"leiloes"])
+@extends('layout.app',["current"=>"lances"])
 @section('body')
     <div class="card border">
         <div class="card-body">
-            <form action="/leiloes" method="post">
+            <form action="/lances" method="post">
+            @csrf <!-- {{ csrf_field() }} -->
 
-                <div class="form-group">
-                    <label  class="mr-sm-2 sr-only" for="produto_id">Produto</label>
-                        @foreach($produtos as $prod)
-                            @if($prod->id === $leiloes->produto_id )
-                            <input type="text" readonly class="form-control-plaintext" id="produto_id" value="{{$prod->nome}}">
-                            @endif
-                        @endforeach
-                    </label>
+                <input type="hidden" id="leilao_id" name="leilao_id" value="{{$leiloes->id}}">
+
+                <div class="row" align="center" >
+                    <div class="card-deck" align="center">
+                        <div class="card border border-primary">
+                            <div class="card-body">
+                                <h5 class="card-title">Produto</h5>
+                                <p class="card-text">
+                                    @foreach($produtos as $prod)
+                                        @if($prod->id === $leiloes->produto_id )
+                                            <input type="text" readonly class="form-control-plaintext" name="produto_id" id="produto_id" value="{{$prod->nome}}">
+                                            <input type="hidden" id="idprodutoo_id" name="idprodutoo_id" value="{{$prod->id}}">
+                                        @endif
+                                    @endforeach
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card border border-primary">
+                            <div class="card-body">
+                                <h5 class="card-title">Valor Atual do Lance</h5>
+                                <p class="card-text">
+                                    <input type="text" readonly class="form-control-plaintext" id="lancevalor" value="{{$leiloes->valor}}">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <br>
+                <br>
                 <div class="form-group">
-                    <label  class="mr-sm-2 sr-only" for="pessoa_id">Pessoa</label>
+                    <label    for="pessoa_id">Pessoa</label>
                     <select class="custom-select mr-sm-2" name="pessoa_id" id="pessoa_id">
-                        <option selected>Escolha pessoa ...</option>
+                        <option selected>Escolha pessoa a dar o lance ...</option>
                         @foreach($pessoas as $pess)
                             <option value="{{$pess->id}}">{{$pess->nome}}</option>
                         @endforeach

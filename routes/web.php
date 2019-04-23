@@ -33,4 +33,9 @@ Route::get('/leiloes','ControladorLeilao@index');
 Route::get('/leiloes/novo','ControladorLeilao@create');
 Route::post('/leiloes','ControladorLeilao@store');
 Route::get('/leiloes/apagar/{id}','ControladorLeilao@destroy');
-Route::get('/leiloes/novolance/{id}','ControladorLeilao@novolance');
+
+
+Route::get('/lances','ControladorLances@index');
+Route::get('/lances/novo/{id}','ControladorLances@create');
+Route::post('/lances/','ControladorLances@store');
+Route::get('/lances/listalances/{id}','ControladorLances@listaLances');

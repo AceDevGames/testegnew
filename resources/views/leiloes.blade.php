@@ -32,16 +32,17 @@
                                     @endif
                                 @endforeach
                             </td-->
-                            <td>
+                            <!--td>
                                 @foreach($produtos as $prod)
                                     @if( $prod->id === $lei->produto_id )
                                         {{$prod->valor}}
                                     @endif
                                 @endforeach
-                            </td>
+                            </td-->
+                            <td>{{$lei->valor}}</td>
 
                             <td>
-                                <a href="/leiloes/novolance/{{$lei->id}}" class="btn btn-sm btn-success">Lance</a>
+                                <a href="/lances/novo/{{$lei->id}}" class="btn btn-sm btn-success">Lance</a>
                                 <a href="/leiloes/editar/{{$lei->id}}" class="btn btn-sm btn-primary">Editar</a>
                                 <a href="/leiloes/apagar/{{$lei->id}}" class="btn btn-sm btn-danger">Apagar</a>
                             </td>

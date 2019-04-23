@@ -18,6 +18,10 @@ class CreateLancesTable extends Migration
             $table->float('valor');
             $table->bigInteger('leilao_id')->unsigned();
             $table->foreign('leilao_id')->references('id')->on('leilaos');
+            $table->bigInteger('produto_id')->unsigned();
+            $table->foreign('produto_id')->references('id')->on('produtos');
+            $table->bigInteger('pessoa_id')->unsigned();
+            $table->foreign('pessoa_id')->references('id')->on('pessoas');
             $table->timestamps();
         });
     }

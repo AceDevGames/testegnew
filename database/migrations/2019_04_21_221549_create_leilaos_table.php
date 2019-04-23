@@ -18,8 +18,7 @@ class CreateLeilaosTable extends Migration
             $table->double('valor');
             $table->bigInteger('produto_id')->unsigned();
             $table->foreign('produto_id')->references('id')->on('produtos');
-            $table->bigInteger('pessoa_id')->unsigned();
-            $table->foreign('pessoa_id')->references('id')->on('pessoas');
+
 
             $table->timestamps();
         });

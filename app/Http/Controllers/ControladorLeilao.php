@@ -43,10 +43,13 @@ class ControladorLeilao extends Controller
      */
     public function store(Request $request)
     {
+        $produto = Produto::find($request->input('produto_id'));
+
         $lei = new Leilao();
-        $lei->pessoa_id = $request->input('pessoa_id');
+
         $lei->produto_id = $request->input('produto_id');
-        $lei->valor = $request->input('lanceleilao');
+        $lei->valor = $produto->valor;
+       // $lei->valor = $request->input('lanceleilao');
         $lei->save();
         return redirect('/leiloes');
     }

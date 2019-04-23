@@ -14,8 +14,12 @@
             </li>
             <li @if($current=="pessoas") class="nav-item active" @else class="nav-item" @endif>
                 <a class="nav-link" href="/pessoas">Pessoas </a>
-            </li><li @if($current=="leiloes") class="nav-item active" @else class="nav-item" @endif>
+            </li>
+            <li @if($current=="leiloes") class="nav-item active" @else class="nav-item" @endif>
                 <a class="nav-link" href="/leiloes">Leiloes </a>
+            </li>
+            <li @if($current=="lances") class="nav-item active" @else class="nav-item" @endif>
+                <a class="nav-link" href="/lances">Lances </a>
             </li>
         </ul>
     </div>

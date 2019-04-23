@@ -19,6 +19,7 @@
                             <td>{{$pess->nome}}</td>
                             <td>{{$pess->idade}}</td>
                             <td>
+                                <a href="/lances/listalances/{{$pess->id}}" class="btn btn-sm btn-primary">Lances</a>
                                 <a href="/pessoas/editar/{{$pess->id}}" class="btn btn-sm btn-primary">Editar</a>
                                 <a href="/pessoas/apagar/{{$pess->id}}" class="btn btn-sm btn-danger">Apagar</a>
                             </td>

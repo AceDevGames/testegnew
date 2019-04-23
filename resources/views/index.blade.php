@@ -1,6 +1,6 @@
 @extends('layout.app',["current"=>"home"])
 @section('body')
-    <h1>Sistekam de Leilões</h1>
+    <h1>Sistema de Leilões</h1>
     <div class="jumbotron bg-light border border-secondary">
         <div class="row">
             <div class="card-deck">
